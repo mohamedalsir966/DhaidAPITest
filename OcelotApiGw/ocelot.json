@@ -1,0 +1,176 @@
+{
+  "Routes": [
+    //Customer API
+    {
+      "UpstreamPathTemplate": "/gateway/Customer/{Id}",
+      "UpstreamHttpMethod": [ "Get", "DELETE" ],
+      "DownstreamPathTemplate": "/api/v1/Customer/{Id}",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "customerIdentityKey",
+        "AllowedScopes": []
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4001
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Customer",
+      "UpstreamHttpMethod": [ "Get", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/v1/Customer",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4001
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/InspectorsSchedule",
+      "UpstreamHttpMethod": [ "Get", "POST" ],
+      "DownstreamPathTemplate": "/api/v1/InspectorsSchedule",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4001
+        }
+      ]
+    },
+    //Inspector API
+    {
+      "UpstreamPathTemplate": "/gateway/Inspector/{Id}",
+      "UpstreamHttpMethod": [ "Get", "DELETE" ],
+      "DownstreamPathTemplate": "/api/v1/Inspector/{Id}",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4002
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Inspector",
+      "UpstreamHttpMethod": [ "Get", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/v1/Inspector",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4002
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/gateway/InspectorShift",
+      "UpstreamHttpMethod": [ "Get", "POST" ],
+      "DownstreamPathTemplate": "/api/v1/InspectorShift",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4002
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Shift/{Id}",
+      "UpstreamHttpMethod": [ "Get", "DELETE" ],
+      "DownstreamPathTemplate": "/api/v1/Shift/{Id}",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4002
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/gateway/Shift",
+      "UpstreamHttpMethod": [ "Get", "POST", "PUT" ],
+      "DownstreamPathTemplate": "/api/v1/Shift",
+      "DownstreamScheme": "http",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 4002
+        }
+      ]
+    }
+
+
+
+
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:4010",
+    "RateLimitOptions": {
+      "QuotaExceededMessage": "Customize Tips!",
+      "HttpStatusCode": 999
+    }
+  }
+}

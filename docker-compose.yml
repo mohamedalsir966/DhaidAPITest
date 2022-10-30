@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+  customerportal.api:
+    image: ${DOCKER_REGISTRY-}customerportalapi
+    build:
+      context: .
+      dockerfile: CustomerPortal.Api/Dockerfile
+
+  sqlserverdb:
+    container_name: sqlserverdb
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1Secure*Password1
+
+
+  ocelotapigw:
+    image: ${DOCKER_REGISTRY-}ocelotapigw
+    build:
+      context: .
+      dockerfile: OcelotApiGw/Dockerfile
+
+
+  inspector.api:
+    image: ${DOCKER_REGISTRY-}inspectorapi
+    build:
+      context: .
+      dockerfile: Inspector.Api/Dockerfile
+
+
+  identityserver:
+    image: ${DOCKER_REGISTRY-}identityserver
+    build:
+      context: .
+      dockerfile: IdentityServer/Dockerfile
+
