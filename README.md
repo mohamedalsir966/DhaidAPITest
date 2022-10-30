@@ -47,11 +47,9 @@ Project Structere:
 
 
 ## Run The Project
-You will need the following tools:
+You will need to Rebuild Solution
 
-* [Visual Studio 2022]
-* [.Net Core 6 or later](https://dotnet.microsoft.com/download/dotnet-core/5)
-* [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
 
 # Getting Started You can **launch microservices** as below urls:
 
